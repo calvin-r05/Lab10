@@ -21,6 +21,7 @@ namespace Q1
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Account> accounts = new List<Account>();
         public MainWindow()
         {
             InitializeComponent();
@@ -29,6 +30,21 @@ namespace Q1
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            CurrentAccount ca1 = new CurrentAccount("John", "Doe", 1000, DateTime.Now.AddYears(-2), "1");
+            CurrentAccount ca2 = new CurrentAccount("Jane", "Doe", 2000, DateTime.Now.AddYears(-4), "2");
+            SavingsAccount sa1 = new SavingsAccount("John", "Smith", 10000, DateTime.Now.AddYears(-2), "3");
+            SavingsAccount sa2 = new SavingsAccount("Jane", "Smith", 20000, DateTime.Now.AddYears(-4), "4");
+
+            accounts.Add(ca1);
+            accounts.Add(ca2);
+            accounts.Add(sa1);
+            accounts.Add(sa2);
+
+            lbxAccounts.ItemsSource = accounts;
         }
     }
 }

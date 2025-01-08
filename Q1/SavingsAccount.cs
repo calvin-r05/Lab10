@@ -9,8 +9,8 @@ namespace Q1
     internal class SavingsAccount : Account
     {
         const decimal INTEREST_RATE = 0.06M;
-        public SavingsAccount(string firstName, string lastName, decimal balance, DateTime interestDate)
-            : base(firstName, lastName, balance, interestDate) { }
+        public SavingsAccount(string firstName, string lastName, decimal balance, DateTime interestDate, string accountNumber)
+            : base(firstName, lastName, balance, interestDate, accountNumber) { }
 
         public override void CalculateInterest()
         {

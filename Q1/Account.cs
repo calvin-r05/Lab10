@@ -10,6 +10,8 @@ namespace Q1
     internal abstract class Account
     {
         #region properties
+
+        public string AccountNumber { get; set; }
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -19,12 +21,13 @@ namespace Q1
         public DateTime InterestDate { get; set; } //This captures date of interest so that interest is only added once per year.
         #endregion properties
         #region constructors
-        public Account(string firstName, string lastName, decimal balance, DateTime interestDate)
+        public Account(string firstName, string lastName, decimal balance, DateTime interestDate, string accountNumber)
         {
             FirstName = firstName;
             LastName = lastName;
             Balance = balance;
             InterestDate = interestDate;
+            AccountNumber = accountNumber;
         }
 
         public Account()
@@ -32,7 +35,7 @@ namespace Q1
             
         }
 
-        public Account(string firstName, string lastName) :this(firstName, lastName, 0, DateTime.Now)
+        public Account(string firstName, string lastName) :this(firstName, lastName, 0, DateTime.Now, "00")
         {
             
         }
@@ -55,7 +58,7 @@ namespace Q1
 
         public override string ToString()
         {
-            return $"{LastName}, {FirstName}";
+            return $"{AccountNumber} - {LastName}, {FirstName}";
         }
         #endregion methods
 
