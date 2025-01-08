@@ -9,7 +9,7 @@
     <Grid>
         <CheckBox x:Name="cbCurrent" Content="Current Accounts" HorizontalAlignment="Left" Margin="122,84,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="cbSavings" Content="Savings Accounts" HorizontalAlignment="Left" Margin="244,84,0,0" VerticalAlignment="Top"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="122,150,485,150"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=4}" Margin="122,150,485,150" SelectionChanged="ListBox_SelectionChanged"/>
         <Label Content="Accounts List" HorizontalAlignment="Left" Margin="122,112,0,0" VerticalAlignment="Top"/>
         <Label Content="Account Details&#xD;&#xA;" HorizontalAlignment="Left" Margin="400,84,0,0" VerticalAlignment="Top" Width="109"/>
         <Label Content="Balance" HorizontalAlignment="Left" Margin="400,191,0,0" VerticalAlignment="Top" Width="60"/>
