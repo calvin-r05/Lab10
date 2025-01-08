@@ -22,6 +22,7 @@ namespace Q1
     public partial class MainWindow : Window
     {
         List<Account> accounts = new List<Account>();
+        List<Account> filteredAccounts = new List<Account>();
         public MainWindow()
         {
             InitializeComponent();
@@ -29,7 +30,19 @@ namespace Q1
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Account selectedAccount = lbxAccounts.SelectedItem as Account;
 
+            if (selectedAccount != null)
+            {
+                tbxFirstName.Text = selectedAccount.FirstName;
+                tbxLastName.Text = selectedAccount.LastName;
+                tbxBalance1.Text = selectedAccount.Balance.ToString("c");
+                tbxAccType.Text = selectedAccount.GetType().Name;
+                tbxInterestDate.Text = selectedAccount.InterestDate.ToString("d");
+
+
+                // tbxInterestDate = selectedAccount.InterestDate;
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -45,6 +58,51 @@ namespace Q1
             accounts.Add(sa2);
 
             lbxAccounts.ItemsSource = accounts;
+        }
+
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            lbxAccounts.ItemsSource = null;
+            filteredAccounts.Clear();
+            bool savings = false, current = false;
+
+            if (cbCurrent.IsChecked.Value)
+            {
+                current = true;
+            }
+
+            if (cbSavings.IsChecked.Value)
+            {
+                savings = true;
+            }
+            if (current && savings)
+            {
+                lbxAccounts.ItemsSource = accounts;
+            }
+            else if (current)
+            {
+                foreach (Account account in accounts)
+                {
+                    if (account is CurrentAccount)
+                    {
+                        filteredAccounts.Add(account);
+                    }
+                }
+                lbxAccounts.ItemsSource = filteredAccounts;
+            }
+
+            else if (savings)
+            {
+                foreach (Account account in accounts)
+                {
+                    if ( account is SavingsAccount)
+                    {
+                        filteredAccounts.Add(account);
+                    }
+                }
+                lbxAccounts.ItemsSource = filteredAccounts;
+            }
+            
         }
     }
 }
