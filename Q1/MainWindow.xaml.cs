@@ -34,15 +34,20 @@ namespace Q1
 
             if (selectedAccount != null)
             {
-                tbxFirstName.Text = selectedAccount.FirstName;
-                tbxLastName.Text = selectedAccount.LastName;
-                tbxBalance1.Text = selectedAccount.Balance.ToString("c");
-                tbxAccType.Text = selectedAccount.GetType().Name;
-                tbxInterestDate.Text = selectedAccount.InterestDate.ToString("d");
+                UpdateDisplay(selectedAccount);
 
 
                 // tbxInterestDate = selectedAccount.InterestDate;
             }
+        }
+
+        private void UpdateDisplay(Account selectedAccount)
+        {
+            tbxFirstName.Text = selectedAccount.FirstName;
+            tbxLastName.Text = selectedAccount.LastName;
+            tbxBalance1.Text = selectedAccount.Balance.ToString("c");
+            tbxAccType.Text = selectedAccount.GetType().Name;
+            tbxInterestDate.Text = selectedAccount.InterestDate.ToString("d");
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -102,6 +107,55 @@ namespace Q1
                 }
                 lbxAccounts.ItemsSource = filteredAccounts;
             }
+            
+        }
+
+        private void BtnDeposit_Click(object sender, RoutedEventArgs e)
+        {
+            if (Decimal.TryParse(TransAmnt.Text, out decimal amount))
+            {
+                Account account = lbxAccounts.SelectedItem as Account;
+                if (account != null)
+                {
+                    account.Deposit(amount);
+                    UpdateDisplay(account);
+                }
+                
+
+            }
+        }
+
+        private void TransAmnt_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TransAmnt.Text = null;
+        }
+
+        private void BtnWithdraw_Click(object sender, RoutedEventArgs e)
+        {
+            if (Decimal.TryParse(TransAmnt.Text, out decimal amount))
+            {
+                Account account = lbxAccounts.SelectedItem as Account;
+                if (account != null)
+                {
+                    account.Withdraw(amount);
+                    UpdateDisplay(account);
+                }
+
+
+            }
+        }
+
+        private void BtnInterest_Click(object sender, RoutedEventArgs e)
+        {
+           
+                Account account = lbxAccounts.SelectedItem as Account;
+                if (account != null)
+                {
+                    account.CalculateInterest();
+                    UpdateDisplay(account);
+                }
+
+
             
         }
     }

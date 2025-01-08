@@ -17,19 +17,19 @@
         <Label Content="Last Name" HorizontalAlignment="Left" Margin="400,149,0,0" VerticalAlignment="Top" Width="78"/>
         <Label Content="First Name" HorizontalAlignment="Left" Margin="400,112,0,0" VerticalAlignment="Top" Width="79"/>
         <Label Content="Account Type" HorizontalAlignment="Left" Margin="400,231,0,0" VerticalAlignment="Top" Width="96"/>
-        <Label Content="Balance" HorizontalAlignment="Left" Margin="400,266,0,0" VerticalAlignment="Top" Width="60"/>
-        <Label Content="Interest Date" HorizontalAlignment="Left" Margin="400,305,0,0" VerticalAlignment="Top" Width="92"/>
+        
+        <Label Content="Interest Date" HorizontalAlignment="Left" Margin="400,280,0,0" VerticalAlignment="Top" Width="92"/>
         <Label Content="Transaction Amount" HorizontalAlignment="Left" Margin="400,350,0,0" VerticalAlignment="Top" Width="137"/>
-        <Button x:Name="BtnDeposit" Content="Deposit" HorizontalAlignment="Left" Margin="679,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.427,0.678" Width="56"/>
-        <Button x:Name="BtnWithdraw" Content="Withdraw" HorizontalAlignment="Left" Margin="679,160,0,0" VerticalAlignment="Top" Width="69"/>
-        <Button x:Name="BtnInterest" Content="Interest" HorizontalAlignment="Left" Margin="679,216,0,0" VerticalAlignment="Top" Width="55"/>
+        <Button x:Name="BtnDeposit" Content="Deposit" HorizontalAlignment="Left" Margin="679,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.427,0.678" Width="56" Click="BtnDeposit_Click"/>
+        <Button x:Name="BtnWithdraw" Content="Withdraw" HorizontalAlignment="Left" Margin="679,160,0,0" VerticalAlignment="Top" Width="69" Click="BtnWithdraw_Click"/>
+        <Button x:Name="BtnInterest" Content="Interest" HorizontalAlignment="Left" Margin="679,216,0,0" VerticalAlignment="Top" Width="55" Click="BtnInterest_Click"/>
         <TextBlock x:Name="tbxFirstName" HorizontalAlignment="Left" Margin="532,117,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
         <TextBlock x:Name="tbxLastName" HorizontalAlignment="Left" Margin="532,154,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
         <TextBlock x:Name="tbxBalance1" HorizontalAlignment="Left" Margin="532,196,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
         <TextBlock x:Name="tbxAccType" HorizontalAlignment="Left" Margin="532,236,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
-        <TextBlock x:Name="tbxBalance2" HorizontalAlignment="Left" Margin="532,268,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
-        <TextBlock x:Name="tbxInterestDate" HorizontalAlignment="Left" Margin="532,310,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
-        <TextBox x:Name="TransAmnt" HorizontalAlignment="Left" Margin="532,354,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67"/>
+        
+        <TextBlock x:Name="tbxInterestDate" HorizontalAlignment="Left" Margin="532,285,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
+        <TextBox x:Name="TransAmnt" HorizontalAlignment="Left" Margin="532,354,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67" GotFocus="TransAmnt_GotFocus"/>
 
     </Grid>
 </Window>
