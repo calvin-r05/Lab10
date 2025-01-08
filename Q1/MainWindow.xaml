@@ -1,0 +1,34 @@
+﻿<Window x:Class="Q1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Q1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <CheckBox x:Name="cbCurrent" Content="Current Accounts" HorizontalAlignment="Left" Margin="122,84,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbSavings" Content="Savings Accounts" HorizontalAlignment="Left" Margin="244,84,0,0" VerticalAlignment="Top"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="122,150,485,150"/>
+        <Label Content="Accounts List" HorizontalAlignment="Left" Margin="122,112,0,0" VerticalAlignment="Top"/>
+        <Label Content="Account Details&#xD;&#xA;" HorizontalAlignment="Left" Margin="400,84,0,0" VerticalAlignment="Top" Width="109"/>
+        <Label Content="Balance" HorizontalAlignment="Left" Margin="400,191,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label Content="Last Name" HorizontalAlignment="Left" Margin="400,149,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label Content="First Name" HorizontalAlignment="Left" Margin="400,112,0,0" VerticalAlignment="Top" Width="79"/>
+        <Label Content="Account Type" HorizontalAlignment="Left" Margin="400,231,0,0" VerticalAlignment="Top" Width="96"/>
+        <Label Content="Balance" HorizontalAlignment="Left" Margin="400,266,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label Content="Interest Date" HorizontalAlignment="Left" Margin="400,305,0,0" VerticalAlignment="Top" Width="92"/>
+        <Label Content="Transaction Amount" HorizontalAlignment="Left" Margin="400,350,0,0" VerticalAlignment="Top" Width="137"/>
+        <Button x:Name="BtnDeposit" Content="Deposit" HorizontalAlignment="Left" Margin="679,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.427,0.678" Width="56"/>
+        <Button x:Name="BtnWithdraw" Content="Withdraw" HorizontalAlignment="Left" Margin="679,160,0,0" VerticalAlignment="Top" Width="69"/>
+        <Button x:Name="BtnInterest" Content="Interest" HorizontalAlignment="Left" Margin="679,216,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBlock HorizontalAlignment="Left" Margin="532,117,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
+        <TextBlock HorizontalAlignment="Left" Margin="532,154,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
+        <TextBlock HorizontalAlignment="Left" Margin="532,196,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
+        <TextBlock HorizontalAlignment="Left" Margin="532,236,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
+        <TextBlock HorizontalAlignment="Left" Margin="532,268,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
+        <TextBlock HorizontalAlignment="Left" Margin="532,310,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.061,-0.029"/>
+        <TextBox x:Name="TransAmnt" HorizontalAlignment="Left" Margin="532,354,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67"/>
+
+    </Grid>
+</Window>
